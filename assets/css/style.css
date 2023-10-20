@@ -1,0 +1,657 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Lumanosimo&family=Poppins:wght@400;700&family=Roboto:wght@400;700&family=Ubuntu:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+    scroll-behavior: smooth;
+}
+
+header{
+    height: 90vh;
+    background: linear-gradient(
+      rgba(240, 240, 240, 0.144),
+      rgba(255, 255, 255, 0.336)
+    ),
+    url("../images/banner.jpg");
+    background-position: top center ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    /* background-attachment: fixed; */
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    padding: 8px 0;
+    background: #fff;
+    box-shadow: 0px 5px 10px 0px #aaa;
+    z-index: 3;
+    opacity: 0.8;
+    position: fixed;
+    width: 100%;
+}
+
+.logo h1{
+    font-size: 32px;
+    color: #08977a;
+}
+
+.checkbtn{
+    font-size: 30px;
+    display: none;
+    cursor: pointer;
+}
+
+#check{
+    display: none;
+}
+
+.navbar ul{
+    margin-top:10px ;
+    display:flex;
+} 
+
+.navbar ul li{
+    list-style: none;
+    margin: 0 15px;
+} 
+
+.navbar ul a{
+    position: relative;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    transition: 0.25s;
+    font-family: 'Poppins';
+} 
+
+.navbar ul a:after{
+    position: absolute;
+    content: "";
+    background-color: #08977a;
+    height: 3px;
+    width: 0;
+    bottom: -4px;
+    left: 0;
+    transition: 0.3s;
+}
+
+.navbar ul a:hover{
+    color: #08977a;
+}
+
+.navbar ul a:hover:after{
+    width: 100%;
+} 
+
+
+
+/* #################################### Home ############################### */
+
+
+
+#home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+#home .text-format{
+    margin-top: 150px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+#home p{
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+#home a{
+    border:2px solid #08977a;
+    margin-top: 4px;
+    padding: 15px 36px;
+    font-family: 'Caveat';
+    border-radius: 4px;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #08977a;
+    color: #fff;
+    transition: 0.4s;
+}
+
+#home a:hover{
+    border:2px solid #0c6150;
+    background-color: #0c6150;
+}
+
+
+
+/* ###############################   About US ######################################### */
+
+
+
+.about-container{
+    background: #f5f5f7;
+    padding: 70px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about-para{
+    flex-basis: 40%;
+    padding: 20px 0;
+}
+
+.about-para h2{
+    font-size: 34px;
+    font-weight: 600;
+}
+
+.about-para p{
+    color: #555;
+    text-align: justify;
+}
+
+.about-img{
+    flex-basis: 40%;
+    box-shadow: 0px 5px 10px 0px #aaa;
+}
+
+.about-img  img{
+    width: 100%;
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    margin: auto;
+}
+
+
+
+/* ##################################### Types of food ################################ */
+
+
+#food{
+    padding: 40px 0;
+}
+
+#food h2{
+    text-transform: uppercase;
+    color: #555;
+    text-align: center;
+    margin: 70px 0;
+    font-size: 30px;
+}
+
+.food-container{
+    margin: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.img-container{
+    /* width: 30%;
+    height: 30%; */
+    flex-basis:25%;
+    position: relative;
+}
+
+.img-container img{
+    width: 100%;
+    /* object-fit: cover;
+  object-position: center; */
+}
+
+.img-content{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 2;
+    text-align: center;
+    transition: all 0.3s ease-in-out 0.1s;
+}
+
+.img-content h3{
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.img-content a{
+    text-decoration: none;
+    color: #08977a;
+    padding: 4px 20px;
+    border-radius: 5px;
+    border: 2px solid #fff;
+    background-color: #fff;
+    font-weight: bold;
+}
+
+.img-content a:hover{
+    color: #fff;
+}
+
+.img-container::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 97.5%;
+    opacity: 0;
+    z-index: 1;
+    background: linear-gradient(rgba(0,0,0,0.6),  #08977a);
+    transform: scaleY(0);
+    transform-origin: 100% 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.img-container:hover::after{
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+.img-container:hover .img-content {
+    opacity: 1;
+    top: 50%;
+}
+
+
+
+
+/* #########################    FOOD MENU    ############################### */
+
+
+
+#food-menu{
+    padding: 30px 0;
+}
+
+#food-menu h2{
+    text-align: center;
+    margin: 80px 0;
+    text-transform: capitalize;
+    color: #555;
+    font-size: 30px;
+}
+
+.food-menu-row{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px ;
+}
+
+.food-menu-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 40%;
+    justify-content: space-evenly;
+}
+
+.food-menu-img{
+    flex-basis: 40%;
+}
+
+
+.food-menu-img img{
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    transition: 0.4s ease;
+}
+
+.food-menu-img img:hover{
+    transform: scale(1.1);
+}
+
+.food-menu-content{
+    flex-basis: 40%;
+}
+
+.food-menu-content span{
+    color: #08977a;
+    font-weight: bold;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+
+
+
+/* ######################        TESTIMONIALS      ################################# */
+
+
+
+
+#testimonial{
+    padding-top: 100px;
+    background: rgba(243, 243, 243);
+}
+
+#testimonial h2{
+    color: #555;
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+
+.testimonial-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.testimonial-box{
+    text-align: center;
+    padding: 50px;
+}
+
+.testimonial-container p{
+    text-align: center;
+}
+
+.customer-img img{
+    display: block;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+.testimonial-box .customer-name{
+    margin-top: 10px;
+}
+
+.ratings .checked{
+    color: orange;
+}
+
+.testimonial-box .customer-description{
+    margin-top: 30px;
+}
+
+
+
+/* ########################        CONTACT US         #######################################*/
+
+
+#contact-us{
+    padding: 55px 0; 
+    background: rgb(226, 226, 226);
+}
+
+.contact-container{
+    display: flex;
+    justify-content: center;
+}
+
+.contact-img{
+    flex-basis: 45%;
+}
+
+.contact-form{
+    flex-basis: 45%;
+    margin-left: 20px;
+}
+
+.contact-form h2{
+    text-transform: capitalize;
+    color: #555;
+}
+
+.contact-img img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 12px;
+}
+
+.form-control input, textarea{
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    margin: 4px;
+    padding: 8px 12px;
+    outline: none;
+}
+
+.btn{
+    border-radius: 4px;
+    border: 2px solid #08977a;
+    background-color: #08977a;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 12px 22px ;
+    transition: 0.3s;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: transparent;
+    color: #08977a;
+    font-weight: bold;
+}
+
+
+
+/* ##############################      FOOTER       ######################  */
+
+
+#footer{
+    padding: 18px 0;
+    background: rgb(65, 65, 65);
+}
+
+#footer p{
+    text-align: center;
+    color:#fff;
+    font-size: 16px;
+}
+
+#footer span{
+    color: #08977a;
+    font-size: 24px;
+}
+
+
+
+
+/* ===================================     MOBILE SCREEN   ========================================= */
+
+
+
+@media (max-width:600px) {
+
+    .checkbtn{
+        display: block;
+        margin-right: 30px;
+    }
+
+    .navbar{
+        justify-content: space-between;
+        background-color: #fff;
+        opacity: 1;
+    }
+
+    .navbar h1{
+        margin-left: 30px;
+    }
+    
+    .navbar ul{
+        display: block;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: #08977a;
+        top: 54px;
+        left: -100%;
+        text-align: center;
+        transition: all ease 0.5s;
+    }
+    
+    .navbar ul li{
+        display: block;
+        margin:  40px 0;
+        line-height: 30px;
+    }
+
+    .navbar ul li a{
+        color: #fff;
+    }
+
+    #check:checked ~ ul{
+        left: 0;
+    }
+
+
+    /* ###############################   About US ######################################### */
+
+
+    .about-container{
+        flex-direction: column;
+    }
+
+    .about-container .about-img{
+        flex-basis: 30%;
+        margin-top: 20px;
+    }
+
+
+    /* ##################################### Types of food ################################ */
+
+
+    .food-container{
+        flex-direction: column;
+    }
+
+    .food-container .img-container{
+        width: 70%;
+        margin: 20px 0;
+    }
+
+    .img-content a{
+        display: block;
+        font-size: 13px;
+    }
+
+
+    /* #########################    FOOD MENU    ############################### */
+
+
+    .food-menu-row{
+        flex-direction: column;
+        margin: 20px 0;
+    }
+    
+    .food-menu-container{
+        flex-direction: column;
+    }
+
+    .food-menu-content{
+        text-align: center;
+        margin: 40px auto;
+        width: 80%
+    }
+
+
+
+    /* ######################        TESTIMONIALS      ################################# */
+
+
+
+    .testimonial-container{
+        flex-direction: column;
+        
+    }
+
+
+
+    /* ########################        CONTACT US         #######################################*/
+
+
+
+    .contact-container{
+        flex-direction: column;
+    }
+
+    .contact-img{
+        width: 90%;
+        margin: 60px auto;
+    }
+
+    .contact-form{
+        width: 90%;
+        margin: 60px auto;
+    }
+    .contact-form .form-control{
+        margin: 10px 0;
+    }
+
+
+}
+
+
+
+
+/* ===========================================      TABLETS     ================================================= */
+
+
+@media (min-width: 601px) and (max-width: 750px){
+
+    .navbar ul a {
+    font-size: 2vw;
+    }
+
+    .food-menu-container{
+      display: block;
+      margin: 0 20px;
+    }
+
+    .food-menu-content{
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .about-para{
+        flex-basis: 80%;
+    }
+    .about-img{
+        flex-basis: 80%;
+    }
+
+    .img-container{
+        flex-basis: 65%;
+        margin: 15px 0;
+    }
+
+    .testimonial-container{
+        flex-wrap: wrap;
+    }
+    
+
+}
